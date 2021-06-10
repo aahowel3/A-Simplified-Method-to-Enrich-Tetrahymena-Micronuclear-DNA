@@ -13,12 +13,13 @@ in /fishers_exact/wholecell_subset fishers_rerun_wc_2.sh reruns WC against the c
 unmapped reads removed with samtools view -b -h -F 4 file.bam > mapped.bam
 
 # Simulations 
-in /simulations the script wc_simulations.sh uses bamPEFragmentsize to estimate parameters for ART Illumina and then 2 seperate lines of ART Illumina commands sample reads from the MAC reference (45x) and MIC reference (2x). Mac and Mic R1 and Mac and Mic R2 are then concateneted togehter to create whole cell R1 simulation and whole cell R2 simulation - which is aligned to the MIC+MAC reference using the duplicatied script flowsortcuration_2_wc.sh <br />
+in /simulations the script wc_simulations.sh uses bamPEFragmentsize to estimate parameters for ART Illumina and then 2 seperate lines of ART Illumina commands sample reads from the MAC reference (45x) and MIC reference (2x). Mac and Mic R1 and Mac and Mic R2 are then concateneted togehter to create whole cell R1 simulation and whole cell R2 simulation - which is aligned to the MIC+MAC reference using the script flowsortcuration_2_wc.sh <br />
+MIC only and MAC only simulations are run using flowsortcuration_2_mic_mac.sh
 unmapped reads removed with samtools view -b -h -F 4 file.bam > mapped.bam <br />
 
-simulations run using MAC reference genome that had the mitochondria removed - to remove mito sequence from mac.genome.fasta use awk '{ if ((NR>1)&&($0~/^>/)) { printf("\n%s", $0); } else if (NR==1) { printf("%s", $0); } else { printf("\t%s", $0); } }' /storage/reference_genomes/tetrahymena_thermophila/mac/mac.genome.fasta | grep -v -Ff remove.txt - | tr "\t" "\n" > mac.genome_nomito.fasta
+simulations run using MAC reference genome had the mitochondria removed from the reference - to remove mito sequence from mac.genome.fasta use awk '{ if ((NR>1)&&($0~/^>/)) { printf("\n%s", $0); } else if (NR==1) { printf("%s", $0); } else { printf("\t%s", $0); } }' mac.genome.fasta | grep -v -Ff remove.txt - | tr "\t" "\n" > mac.genome_nomito.fasta
 
-in /simulations_1x the script wc_simulations_1x.sh uses bamPEFragmentsize to estimate parameters for ART Illumina and then 2 seperate lines of ART Illumina commands sample reads from the MAC reference (45x) and MIC reference (2x).
+in /simulations_1x the script wc_simulations_1x.sh uses bamPEFragmentsize to estimate parameters for ART Illumina and then 2 seperate lines of ART Illumina commands sample reads from the MAC reference (1x) and MIC reference (1x) which is aligned to the MIC+MAC reference using the script flowsortcuration_2_wc.sh
 
 # Coverage MDS and IES
 IES_coordinates.csv - locations of IESs in supercontigs: https://doi.org/10.7554/eLife.19090.001 supplementary file 3A 
