@@ -8,8 +8,8 @@ used TrueSeqv3 adapter trimming for illumina universal adapter
 in /wholecell_data subset.sh creates a subset of reads from nonGE ancestors (Long et al., 2016) (BioProject PRJNA285268) with the same number of reads as the original Mic and Mac flowsorted sequencing samples
 
 # Fisher's exact tests  
-in /fishers_exact fishers_rerun_2.sh runs the MIC and MAC FACS against the combined refernece plus rDNA reference into bam2 and sam2 <br />
-in /fishers_exact/wholecell_subset fishers_rerun_wc_2.sh reruns WC against the combined refernece plus rDNA reference into bam2 and sam2 <br />
+in /fishers_exact fishers_rerun_2.sh runs the MIC and MAC FACS against the combined refernece plus rDNA reference <br />
+in /fishers_exact/wholecell_subset fishers_rerun_wc_2.sh reruns WC against the combined refernece plus rDNA reference <br />
 unmapped reads removed with samtools view -b -h -F 4 file.bam > mapped.bam
 
 # Simulations 
