@@ -69,4 +69,4 @@ calculateIRSscores.R then takes the chrXIRSscores_micsample.txt and chrX IRSscor
 calculateIRSscores_all.R consolidates scores over all 5 chromosomes and graphs them in a histogram
 
 # Contamination 
-in human_contamination/blast_check there is a mac_contamination and mic_contamination folder each mic/mac folder has a blast_check.sh that has the commands that convert unmapped reads in the bam to fastqs, assembles them with spades, and blasts them
+in check_contamination/blast_check there is a mac_contamination and mic_contamination folder each with a blast_check.sh that has the commands that convert unmapped reads in the bam to fastqs, assembles them with spades, and blasts them
