@@ -1,7 +1,7 @@
 # A-Simplified-Method-to-Enrich-Tetrahymena-Micronuclear-DNA
 
 # Raw Data
-flowsort_curation.sh in /data runs trimmomatic on Mic and Mac pairs of fastq files and then fastqc on trimmmed files <br />
+in /data flowsort_curation.sh in runs trimmomatic on Mic and Mac pairs of fastq files and then fastqc on trimmmed files <br />
 used TrueSeqv3 adapter trimming for illumina universal adapter
 
 # Whole Cell Data
