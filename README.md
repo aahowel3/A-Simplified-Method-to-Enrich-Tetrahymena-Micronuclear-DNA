@@ -51,7 +51,7 @@ in ./coverage_05/coverage.sh creates 3 folders - mac_coverage, mic_coverage, wc_
 
 ./coverage_05/analyze_coverage_allchromo.R compares the IES_inMic file and the coverage file to calculate mean coverage for IES regions and mean coverage for Mac-destined regions - but seperated per chromosome - what is an IES in the coordinates for 1 chromosome will not be an IES at the same coordinates in another
 
-# IRS 
+# IRS 06
 ./retention_scores_06/make_bedfile_06a.sh takes ./coverage_05/chrX_IESs.tsv (tsv of the joined IES_in_supercontig.csv and contig_to_chromosome.csv made through ./coverage_05/merge_contigs.R) pulls out last 2 columns of chrX_IESs.tsv (IES_in_chr_start and IES_in_chr_end) and creates a bedfile of just those 4 columns - chr, IES_in_chr_start, IES_in_chr_end, and IES name 
 
 ./retention_scores_06/make_IESfasta_06b.sh takes those bedfile positions and using bedtools getfasta and the micronucealr reference genome and pulls out all the basepairs in that bedfile range to create a MAC+IES reference 
@@ -66,5 +66,5 @@ Rscript ./retention_scores_06/IRS/create_mac_excisionsites_06e.sh takes chain fi
 
 ./retention_scores_06/calculateIRSscores_all_06h.R consolidates scores over all 5 chromosomes and graphs them in a histogram
 
-# Contamination 
+# Contamination 07
 ./check_contamination_07/blast_check there is a mac_contamination and mic_contamination folder each with a blast_check_07a.sh that has the commands that convert unmapped reads in the bam to fastqs, assembles them with spades, and blasts them
