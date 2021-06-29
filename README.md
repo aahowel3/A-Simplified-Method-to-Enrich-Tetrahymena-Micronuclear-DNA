@@ -1,7 +1,7 @@
 # A-Simplified-Method-to-Enrich-Tetrahymena-Micronuclear-DNA
 
 # Overview 
-Each folder can be run in order 01-07 with scripts labeled a-h per folder seperately or all at once with master script run.sh in ./ 
+Each folder can be run in order 01-07 with scripts labeled a-h per folder, command line usage for each script is documented in run.sh in ./ 
 ### Dependencies 
 * R-3.6.3 https://cran.r-project.org/bin/windows/base/old/3.6.3/ 
 * trimmomatic v0.38 http://www.usadellab.org/cms/?page=trimmomatic
