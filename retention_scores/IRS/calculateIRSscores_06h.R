@@ -1,5 +1,4 @@
-setwd("/home/aahowel3/Documents/flowsortdata/retention_scores2")
-datamic=read.csv("chr2IRSscores_micsample.txt",sep="\t",header=FALSE)
+datamic=read.csv("chr*IRSscores_micsample.txt",sep="\t",header=FALSE)
 names(datamic)=c("IES_ID","IESplus","IESminus")
 
 datamic$IRS=(datamic$IESplus)/(datamic$IESplus + datamic$IESminus) 
