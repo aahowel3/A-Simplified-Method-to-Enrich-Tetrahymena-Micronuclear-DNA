@@ -1,7 +1,7 @@
 #from the chrX_IESs_inmic.csv series - extract columns first (IES name)
 #last and second to last (coordinates of IES in Mic)
 
-#usage bash make_bedfile.sh ..//retention_scores/chr*inmic.tsv
+#usage bash make_bedfile.sh ./coverage/chr*inmic.tsv
 
 
 for arg in $@
