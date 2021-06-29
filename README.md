@@ -41,34 +41,30 @@ unmapped reads removed with samtools view -b -h -F 4 file.bam > mapped.bam <br /
 ./simulations_1x/wc_simulations_1x_04d.sh uses bamPEFragmentsize to estimate parameters for ART Illumina and then 2 seperate lines of ART Illumina commands sample reads from the MAC reference (1x) and MIC reference (1x) which is aligned to the MIC+MAC reference using the script ./simulations_1x/flowsortcuration_2_wc_04e.sh
 
 # Coverage MDS and IES 05
-./coverage/IES_coordinates.csv - locations of IESs in supercontigs: https://doi.org/10.7554/eLife.19090.001 supplementary file 3A 
+./coverage_05/IES_coordinates.csv - locations of IESs in supercontigs: https://doi.org/10.7554/eLife.19090.001 supplementary file 3A 
 
-./coverage/contig_to_chromosome.csv - locations of supercontigs in chromosomes: https://doi.org/10.7554/eLife.19090.001 supplementary file 1C
+./coverage_05/contig_to_chromosome.csv - locations of supercontigs in chromosomes: https://doi.org/10.7554/eLife.19090.001 supplementary file 1C
 
-The R script ./coverage/merge_contigs.R converts IES coordinates in supercontigs to IES coordinates in mic chromosomes. ./coverage/merge_contigs.R also splits the IESs_inmic_chromosomes into 5 files: chr#_IESs_inmic.tsv
+The R script ./coverage_05/merge_contigs.R converts IES coordinates in supercontigs to IES coordinates in mic chromosomes. ./coverage_05/merge_contigs.R also splits the IESs_inmic_chromosomes into 5 files: chr#_IESs_inmic.tsv
 
-in ./coverage/coverage.sh creates 3 folders - mac_coverage, mic_coverage, wc_coverage - and creates a coverage file of mic samples, mac samples, and wc samples using Samtools depth, pulling from previously generated alignments - each folder has an analyze_coverage_allchromo.sh - which is purely a way to loop each file back through to /coverage/analyze_coverage_allchromo.R 
+in ./coverage_05/coverage.sh creates 3 folders - mac_coverage, mic_coverage, wc_coverage - and creates a coverage file of mic samples, mac samples, and wc samples using Samtools depth, pulling from previously generated alignments - each folder has an analyze_coverage_allchromo.sh - which is purely a way to loop each file back through to /coverage_05/analyze_coverage_allchromo.R 
 
-./coverage/analyze_coverage_allchromo.R compares the IES_inMic file and the coverage file to calculate mean coverage for IES regions and mean coverage for Mac-destined regions - but seperated per chromosome - what is an IES in the coordinates for 1 chromosome will not be an IES at the same coordinates in another
+./coverage_05/analyze_coverage_allchromo.R compares the IES_inMic file and the coverage file to calculate mean coverage for IES regions and mean coverage for Mac-destined regions - but seperated per chromosome - what is an IES in the coordinates for 1 chromosome will not be an IES at the same coordinates in another
 
 # IRS 
-./retention_scores/make_bedfile.sh takes ./coverage/chrX_IESs.tsv (tsv of the joined IES_in_supercontig.csv and contig_to_chromosome.csv made through ./coverage/merge_contigs.R) pulls out last 2 columns of chrX_IESs.tsv (IES_in_chr_start and IES_in_chr_end) and creates a bedfile of just those 4 columns - chr, IES_in_chr_start, IES_in_chr_end, and IES name 
+./retention_scores_06/make_bedfile_06a.sh takes ./coverage_05/chrX_IESs.tsv (tsv of the joined IES_in_supercontig.csv and contig_to_chromosome.csv made through ./coverage_05/merge_contigs.R) pulls out last 2 columns of chrX_IESs.tsv (IES_in_chr_start and IES_in_chr_end) and creates a bedfile of just those 4 columns - chr, IES_in_chr_start, IES_in_chr_end, and IES name 
 
-./retention_scores/make_IESfasta.sh takes those bedfile positions and using bedtools getfasta and the micronucealr reference genome and pulls out all the basepairs in that bedfile range
+./retention_scores_06/make_IESfasta_06b.sh takes those bedfile positions and using bedtools getfasta and the micronucealr reference genome and pulls out all the basepairs in that bedfile range to create a MAC+IES reference 
 
-./retention_scores/IRSscore_alignment_2.sh aligns the Mac and Mic flowsorted samples to the mac+IES_reference.fasta reference and creates a bam folder
+./retention_scores_06/IRSscore_alignment_2_06c.sh aligns the Mac and Mic flowsorted samples to the mac+IES_reference.fasta reference and creates a bam folder
 
-Rscript ./retention_scores/mic.mac.chain_perchromosome creates a chain file for each chromosome chain files 1-5 and mic_inIES files 1-5 are fed into create_mac_excisionsites.sh (which uses create_mac_excisionsites.R - this is what determines viable IESs - those not overlapping mac scaffolds) in pairs to create chrX_mac_excisionsites.tsvs for each chromosome
+Rscript ./retention_scores_06/IRS/mic.mac.chain_perchromosome_06d.R creates a chain file for each chromosome 
 
-./retention_scores/calculate_IRS.sh calcualtes the IRS+ and IRS- scores using samtools view startcoor:endcoor on bamfiles produced by IRSscore_alignment_2.sh while looping through the coordinates in the Chr_IESs_mac_excisionsites.tsvs to create the text files chrXIRSscores_mic.txt and chrX IRSscores_mac.txt Excision sites are truly just 1 or few bps - not a specific motfif or length 
+Rscript ./retention_scores_06/IRS/create_mac_excisionsites_06e.sh takes chain files 1-5 and mic_inIES files 1-5 and loops them through create_mac_excisionsites_06f.R to create chrX_mac_excisionsites.tsvs for each chromosome
 
-#usage 
-bash calculate_IRS_mac.sh chrX_IESs_mac_excisionsites.tsv > chrX_IESscores_macsample.txt 
-bash calculate_IRS_mic.sh chrX_IESs_mac_excisionsites.tsv > chrX_IESscores_micsample.txt
+./retention_scores_06/IRS/calculate_IRS_mic_06g.sh and calculate_IRS_mac_06g.sh calcualtes the IRS+ and IRS- scores using samtools view startcoor:endcoor on bamfiles produced by IRSscore_alignment_2.sh while looping through the coordinates in the Chr_IESs_mac_excisionsites.tsvs to create the text files chrXIRSscores_mic.txt and chrX IRSscores_mac.txt Excision sites are truly just 1 or few bps - not a specific motfif or length 
 
-./retention_scores/calculateIRSscores.R then takes the chrXIRSscores_micsample.txt and chrX IRSscores_macsample.txt files to calculate the mean IRS scores for each sample and create a barplot of the IRS distribution
-
-./retention_scores/calculateIRSscores_all.R consolidates scores over all 5 chromosomes and graphs them in a histogram
+./retention_scores_06/calculateIRSscores_all_06h.R consolidates scores over all 5 chromosomes and graphs them in a histogram
 
 # Contamination 
-./check_contamination/blast_check there is a mac_contamination and mic_contamination folder each with a blast_check.sh that has the commands that convert unmapped reads in the bam to fastqs, assembles them with spades, and blasts them
+./check_contamination_07/blast_check there is a mac_contamination and mic_contamination folder each with a blast_check_07a.sh that has the commands that convert unmapped reads in the bam to fastqs, assembles them with spades, and blasts them
