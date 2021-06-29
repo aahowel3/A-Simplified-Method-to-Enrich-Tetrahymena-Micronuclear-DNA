@@ -40,18 +40,3 @@ datamac$FACS_Sample="MAC"
 longform = rbind(datamic,datamac)
 
 ggplot(longform, aes(IRS, fill=FACS_Sample)) + geom_histogram(position="dodge") + ggtitle("IES Retention Scores (Chromosomes 1-5)") + theme(plot.title = element_text(hjust = 0.5))
-
-
-#KS test to compare similarity of histograms
-require(graphics)
-require(dgof)
-
-x=datamic$IRS
-
-y=datamac$IRS
-
-#example provided 
-x <- rnorm(50)
-y <- runif(30)
-# Do x and y come from the same distribution?
-ks.test(x, y)
