@@ -1,5 +1,12 @@
 # A-Simplified-Method-to-Enrich-Tetrahymena-Micronuclear-DNA
 
+# Overview 
+Each folder can be run in order 01-07 with scripts labeled a-h per folder seperately or all at once with run.sh in ./ 
+
+# Dependencies 
+* Bullet list
+* Bullet list item 2
+
 # Raw Data 01
 Sequencing was performed using a MiSeq Reagent Kit Nano V2 (250 cycles) and Illumina paired-end sequenced by the DNASU core facility at the Biodesign Institute at Arizona State University. Samples were multiplexed with the final number of reads per sample being 1,048,024 reads for the MAC FACS sample and 904,282 reads for the MIC FACS sample. Sequencing reads are available from the NCBI’s SRA database under a BioProject with accession number PRJNA735576: https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA735576 <br />
 
