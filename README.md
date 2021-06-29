@@ -5,6 +5,7 @@ Sequencing was performed using a MiSeq Reagent Kit Nano V2 (250 cycles) and Illu
 
 ./data_01/flowsort_curation_01a.sh in runs trimmomatic on Mic and Mac pairs of fastq files and then fastqc on trimmmed files <br />
 used TrueSeqv3 adapter trimming for illumina universal adapter <br />
+fastqc reports are in ./quality_control
 
 # Whole Cell Data 02 
 ./wholecell_data_02/subset_02a.sh creates a subset of reads from nonGE ancestors (Long et al., 2016) (BioProject PRJNA285268) with the same number of reads as the original Mic and Mac flowsorted sequencing samples https://www.ncbi.nlm.nih.gov/bioproject/PRJNA285268/
