@@ -2,6 +2,7 @@
 
 # Raw Data 01
 Sequencing was performed using a MiSeq Reagent Kit Nano V2 (250 cycles) and Illumina paired-end sequenced by the DNASU core facility at the Biodesign Institute at Arizona State University. Samples were multiplexed with the final number of reads per sample being 1,048,024 reads for the MAC FACS sample and 904,282 reads for the MIC FACS sample. Sequencing reads are available from the NCBI’s SRA database under a BioProject with accession number PRJNA735576: https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA735576 <br />
+
 ./data_01/flowsort_curation_01a.sh in runs trimmomatic on Mic and Mac pairs of fastq files and then fastqc on trimmmed files <br />
 used TrueSeqv3 adapter trimming for illumina universal adapter <br />
 
@@ -11,7 +12,7 @@ used TrueSeqv3 adapter trimming for illumina universal adapter <br />
 # Reference Genomes 
 MIC reference genome is available at: https://www.ncbi.nlm.nih.gov/assembly/GCA_000261185.1
 MAC reference genome is available at: https://www.ncbi.nlm.nih.gov/assembly/GCA_000189635.1
-rDNA reference genome is available at: https://www.ebi.ac.uk/ena/browser/view/X54512
+rDNA reference genome is available at: https://www.ebi.ac.uk/ena/browser/view/X54512  <br />
 to create the combined referenced concatenated the MIC, MAC, and rDNA references with "cat" 
 
 # Fisher's exact tests  
