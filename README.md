@@ -30,14 +30,15 @@ Basic process has been to remove all reads that have an XA or an SA tag indicati
 
 R script for fishers test is ./fishers_exact/fishers_rerun_ftests_03c.R
 
-# Simulations 
-./simulations/wc_simulations.sh uses bamPEFragmentsize to estimate parameters for ART Illumina and then 2 seperate lines of ART Illumina commands sample reads from the MAC reference (45x) and MIC reference (2x). Mac and Mic R1 and Mac and Mic R2 are then concateneted togehter to create whole cell R1 simulation and whole cell R2 simulation - which is aligned to the MIC+MAC reference using the script ./simulations/flowsortcuration_2_wc.sh <br />
-MIC only and MAC only simulations are run using ./simulations/flowsortcuration_2_mic_mac.sh
-unmapped reads removed with samtools view -b -h -F 4 file.bam > mapped.bam <br />
-/
+# Simulations 04
 simulations run using MAC reference genome had the mitochondria removed from the reference - to remove mito sequence from mac.genome.fasta use awk '{ if ((NR>1)&&($0~/^>/)) { printf("\n%s", $0); } else if (NR==1) { printf("%s", $0); } else { printf("\t%s", $0); } }' mac.genome.fasta | grep -v -Ff remove.txt - | tr "\t" "\n" > mac.genome_nomito.fasta
 
-./simulations_1x/wc_simulations_1x.sh uses bamPEFragmentsize to estimate parameters for ART Illumina and then 2 seperate lines of ART Illumina commands sample reads from the MAC reference (1x) and MIC reference (1x) which is aligned to the MIC+MAC reference using the script ./simulations_1x/flowsortcuration_2_wc.sh
+./simulations_04/wc_simulations_04a.sh uses bamPEFragmentsize to estimate parameters for ART Illumina and then 2 seperate lines of ART Illumina commands sample reads from the MAC reference (45x) and MIC reference (2x). Mac and Mic R1 and Mac and Mic R2 are then concateneted togehter to create whole cell R1 simulation and whole cell R2 simulation - which is aligned to the MIC+MAC reference using the script ./simulations/flowsortcuration_2_wc_04b.sh <br />
+MIC only and MAC only simulations are run using ./simulations/flowsortcuration_2_mic_mac_04c.sh
+unmapped reads removed with samtools view -b -h -F 4 file.bam > mapped.bam <br />
+/
+
+./simulations_1x/wc_simulations_1x_04d.sh uses bamPEFragmentsize to estimate parameters for ART Illumina and then 2 seperate lines of ART Illumina commands sample reads from the MAC reference (1x) and MIC reference (1x) which is aligned to the MIC+MAC reference using the script ./simulations_1x/flowsortcuration_2_wc_04e.sh
 
 # Coverage MDS and IES
 ./coverage/IES_coordinates.csv - locations of IESs in supercontigs: https://doi.org/10.7554/eLife.19090.001 supplementary file 3A 
