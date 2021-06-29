@@ -1,5 +1,5 @@
 #Mic/Mac flowsort data on hines /work/aahowel3/flowsortdata
-#USAGE: command line input should look like $bash flowsort_curation.sh *R1_001.fastq.gz
+#USAGE: command line input should look like $bash flowsort_curation_01a.sh *R1_001.fastq.gz
 #trimmomatic adapter file in same directory TruSeq-3-PE-2.fa
 
 
