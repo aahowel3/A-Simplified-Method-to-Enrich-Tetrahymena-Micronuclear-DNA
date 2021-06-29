@@ -52,7 +52,7 @@ in ./coverage/coverage.sh creates 3 folders - mac_coverage, mic_coverage, wc_cov
 ./coverage/analyze_coverage_allchromo.R compares the IES_inMic file and the coverage file to calculate mean coverage for IES regions and mean coverage for Mac-destined regions - but seperated per chromosome - what is an IES in the coordinates for 1 chromosome will not be an IES at the same coordinates in another
 
 # IRS 
-./retention_scores/make_bedfile.sh takes ./retention_scores/chrX_IESs.tsv (tsv of the joined IES_in_supercontig.csv and contig_to_chromosome.csv made through ./coverage/merge_contigs.R) pulls out last 2 columns of chrX_IESs.tsv (IES_in_chr_start and IES_in_chr_end) and creates a bedfile of just those 4 columns - chr, IES_in_chr_start, IES_in_chr_end, and IES name 
+./retention_scores/make_bedfile.sh takes ./coverage/chrX_IESs.tsv (tsv of the joined IES_in_supercontig.csv and contig_to_chromosome.csv made through ./coverage/merge_contigs.R) pulls out last 2 columns of chrX_IESs.tsv (IES_in_chr_start and IES_in_chr_end) and creates a bedfile of just those 4 columns - chr, IES_in_chr_start, IES_in_chr_end, and IES name 
 
 ./retention_scores/make_IESfasta.sh takes those bedfile positions and using bedtools getfasta and the micronucealr reference genome and pulls out all the basepairs in that bedfile range
 
