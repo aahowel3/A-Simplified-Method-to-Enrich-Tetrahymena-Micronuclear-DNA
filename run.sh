@@ -34,3 +34,7 @@ samtools view -b -h -F 4 file.bam > mapped.bam
 bash ./simulations_1x/wc_simulations_1x_04d.sh
 #align simulated whole cell reads to the combined reference genome 
 bash ./simulations_1x/flowsortcuration_2_wc_04e.sh
+
+#Coverage MDS and IES 05 
+#IES_coordinates.csv
+R ./coverage/merge_contigs.R
