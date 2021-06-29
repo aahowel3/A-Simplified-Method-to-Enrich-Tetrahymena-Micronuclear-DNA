@@ -36,7 +36,7 @@ simulations run using MAC reference genome had the mitochondria removed from the
 ./simulations_04/wc_simulations_04a.sh uses bamPEFragmentsize to estimate parameters for ART Illumina and then 2 seperate lines of ART Illumina commands sample reads from the MAC reference (45x) and MIC reference (2x). Mac and Mic R1 and Mac and Mic R2 are then concateneted togehter to create whole cell R1 simulation and whole cell R2 simulation - which is aligned to the MIC+MAC reference using the script ./simulations/flowsortcuration_2_wc_04b.sh <br />
 MIC only and MAC only simulations are run using ./simulations/flowsortcuration_2_mic_mac_04c.sh
 unmapped reads removed with samtools view -b -h -F 4 file.bam > mapped.bam <br />
-/
+
 
 ./simulations_1x/wc_simulations_1x_04d.sh uses bamPEFragmentsize to estimate parameters for ART Illumina and then 2 seperate lines of ART Illumina commands sample reads from the MAC reference (1x) and MIC reference (1x) which is aligned to the MIC+MAC reference using the script ./simulations_1x/flowsortcuration_2_wc_04e.sh
 
