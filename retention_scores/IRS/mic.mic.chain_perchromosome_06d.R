@@ -1,10 +1,6 @@
-#remember - IRS scores are specific to EACH IES, so really we want the lines that mac scaffolds that sandiwich either side of an IES 
-#Example - IES at chr2 3742264-3743994 - want the mac scaffolds either side at 3742262 (IES:3742264-3743994) 3743993
-#those corresponsing mac scaffold positions (3742262 in mic is 101906 in Mac and 3743993 is 101905 [only 1 bp gap]) 
-#these are the regions we want to look at for our IRS scores 
+#creates a chain file for each chromosome 
 library(dplyr)
 
-setwd("/home/aahowel3/Documents/flowsortdata/retention_scores2")
 data=read.csv("mic.mac.sorted.chain",sep=" ",header=FALSE)
 #final trailing column on the second line is part of the "alignment data lines"
 #column = size of ungapped alignment 
@@ -42,11 +38,7 @@ res <- lapply(chain_bychr, function(x){
 
 #Write to 5 different files per chromosome
 write.table(res$chr1,file="chr1_chain.tsv",row.names = FALSE,sep="\t", quote=FALSE)
-
 write.table(res$chr2,file="chr2_chain.tsv",row.names = FALSE,sep="\t", quote=FALSE)
-
 write.table(res$chr3,file="chr3_chain.tsv",row.names = FALSE,sep="\t", quote=FALSE)
-
 write.table(res$chr4,file="chr4_chain.tsv",row.names = FALSE,sep="\t", quote=FALSE)
-
 write.table(res$chr5,file="chr5_chain.tsv",row.names = FALSE,sep="\t", quote=FALSE)
