@@ -2,8 +2,7 @@
 
 # Overview 
 Each folder can be run in order 01-07 with scripts labeled a-h per folder seperately or all at once with run.sh in ./ 
-
-# Dependencies 
+## Dependencies 
 * Bullet list
 * Bullet list item 2
 
