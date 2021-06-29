@@ -3,10 +3,15 @@
 # Raw Data
 ./data/flowsort_curation.sh in runs trimmomatic on Mic and Mac pairs of fastq files and then fastqc on trimmmed files <br />
 used TrueSeqv3 adapter trimming for illumina universal adapter <br />
-Sequencing reads are available from the NCBI’s SRA database: https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA735576
+Sequencing was performed using a MiSeq Reagent Kit Nano V2 (250 cycles) and Illumina paired-end sequenced by the DNASU core facility at the Biodesign Institute at Arizona State University. Samples were multiplexed with the final number of reads per sample being 1,048,024 reads for the MAC FACS sample and 904,282 reads for the MIC FACS sample. Sequencing reads are available from the NCBI’s SRA database under a BioProject with accession number PRJNA735576: https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA735576
 
 # Whole Cell Data
-./wholecell_data/subset.sh creates a subset of reads from nonGE ancestors (Long et al., 2016) (BioProject PRJNA285268) with the same number of reads as the original Mic and Mac flowsorted sequencing samples
+./wholecell_data/subset.sh creates a subset of reads from nonGE ancestors (Long et al., 2016) (BioProject PRJNA285268) with the same number of reads as the original Mic and Mac flowsorted sequencing samples https://www.ncbi.nlm.nih.gov/bioproject/PRJNA285268/
+
+# Reference Genomes 
+MIC reference genome is available at: https://www.ncbi.nlm.nih.gov/assembly/GCA_000261185.1
+MAC reference genome is available at: https://www.ncbi.nlm.nih.gov/assembly/GCA_000189635.1
+rDNA reference genome is available at: https://www.ebi.ac.uk/ena/browser/view/X54512
 
 # Fisher's exact tests  
 ./fishers_exact/fishers_rerun_2.sh runs the MIC and MAC FACS against the combined refernece plus rDNA reference <br />
