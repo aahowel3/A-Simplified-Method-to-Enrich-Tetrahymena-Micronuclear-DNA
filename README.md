@@ -2,9 +2,14 @@
 
 # Overview 
 Each folder can be run in order 01-07 with scripts labeled a-h per folder seperately or all at once with master script run.sh in ./ 
-## Dependencies 
-* Bullet list
-* Bullet list item 2
+### Dependencies 
+* R-3.6.3 https://cran.r-project.org/bin/windows/base/old/3.6.3/ 
+* trimmomatic v0.38 http://www.usadellab.org/cms/?page=trimmomatic
+* BWA mem v0.7.12 http://bio-bwa.sourceforge.net/
+* SAMtools v1.10 http://www.htslib.org/
+* seqtk https://github.com/lh3/seqtk
+* ART (v1.5.0) https://www.niehs.nih.gov/research/resources/software/biostatistics/art/index.cfm
+* deepTools bamPEFragmentSize https://deeptools.readthedocs.io/en/develop/content/tools/bamPEFragmentSize.html 
 
 # Raw Data 01
 Sequencing was performed using a MiSeq Reagent Kit Nano V2 (250 cycles) and Illumina paired-end sequenced by the DNASU core facility at the Biodesign Institute at Arizona State University. Samples were multiplexed with the final number of reads per sample being 1,048,024 reads for the MAC FACS sample and 904,282 reads for the MIC FACS sample. Sequencing reads are available from the NCBI’s SRA database under a BioProject with accession number PRJNA735576: https://www.ncbi.nlm.nih.gov/bioproject/?term=PRJNA735576 <br />
