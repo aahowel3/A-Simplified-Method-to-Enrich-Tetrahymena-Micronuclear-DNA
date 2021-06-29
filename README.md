@@ -17,8 +17,8 @@ rDNA reference genome is available at: https://www.ebi.ac.uk/ena/browser/view/X5
 to create the combined referenced concatenated the MIC, MAC, and rDNA references with "cat" 
 
 # Fisher's exact tests  
-./fishers_exact/fishers_rerun_2.sh runs the MIC and MAC FACS against the combined refernece plus rDNA reference <br />
-./fishers_exact/wholecell_subset/flowsort_curation_wc_2.sh reruns WC against the combined refernece plus rDNA reference <br />
+./fishers_exact_03/fishers_rerun_2_03a.sh runs the MIC and MAC FACS against the combined refernece plus rDNA reference <br />
+./fishers_exact_03/wholecell_subset/flowsort_curation_wc_2_03b.sh reruns WC against the combined refernece plus rDNA reference <br />
 unmapped reads removed with samtools view -b -h -F 4 file.bam > mapped.bam
 
 In each alignment (MAC FACS to MICMAC ref and MIC FACS to MICMAC ref) the following commands are run: #count reads exclusively aligned to mac (scf) 
@@ -28,7 +28,7 @@ samtools view FACSsample_toconcatref_mapped.bam | grep -v "XA:" | grep -v "SA:" 
 
 Basic process has been to remove all reads that have an XA or an SA tag indicating a secondary or chimeric alignment.
 
-R script for fishers test is ./fishers_exact/fishers_rerun_ftests.R
+R script for fishers test is ./fishers_exact/fishers_rerun_ftests_03c.R
 
 # Simulations 
 ./simulations/wc_simulations.sh uses bamPEFragmentsize to estimate parameters for ART Illumina and then 2 seperate lines of ART Illumina commands sample reads from the MAC reference (45x) and MIC reference (2x). Mac and Mic R1 and Mac and Mic R2 are then concateneted togehter to create whole cell R1 simulation and whole cell R2 simulation - which is aligned to the MIC+MAC reference using the script ./simulations/flowsortcuration_2_wc.sh <br />
