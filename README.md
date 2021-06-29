@@ -16,7 +16,7 @@ MAC reference genome is available at: https://www.ncbi.nlm.nih.gov/assembly/GCA_
 rDNA reference genome is available at: https://www.ebi.ac.uk/ena/browser/view/X54512  <br />
 to create the combined referenced concatenated the MIC, MAC, and rDNA references with "cat" 
 
-# Fisher's exact tests  
+# Fisher's exact tests 03
 ./fishers_exact_03/fishers_rerun_2_03a.sh runs the MIC and MAC FACS against the combined refernece plus rDNA reference <br />
 ./fishers_exact_03/wholecell_subset/flowsort_curation_wc_2_03b.sh reruns WC against the combined refernece plus rDNA reference <br />
 unmapped reads removed with samtools view -b -h -F 4 file.bam > mapped.bam
