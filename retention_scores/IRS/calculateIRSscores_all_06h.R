@@ -1,5 +1,4 @@
 library(ggplot2)
-setwd("/home/ahowell/Documents/flowsortdata/retention_scores2")
 datamic1=read.csv("chr1IRSscores_micsample.txt",sep="\t",header=FALSE)
 datamic2=read.csv("chr2IRSscores_micsample.txt",sep="\t",header=FALSE)
 datamic3=read.csv("chr3IRSscores_micsample.txt",sep="\t",header=FALSE)
