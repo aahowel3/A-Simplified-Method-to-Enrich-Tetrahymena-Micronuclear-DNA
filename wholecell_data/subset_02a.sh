@@ -1,5 +1,5 @@
 #create a 1million read subset of a whole cell mic+mac sample (ancestor, not GE'd) to compare to our purified mic/mac sample
-#R1 = ~500,000 R2 = ~500,000 (look at fastqc report of Mac and Mic TRIMMED to see how many reads you need to sample)
+#R1 = ~500,000 R2 = ~500,000 (look at fastqc report of Mac and Mic TRIMMED in ./quality_control to see how many reads you need to sample)
 
 for filename in SB210E*_1_*R1*.fastq
 do
