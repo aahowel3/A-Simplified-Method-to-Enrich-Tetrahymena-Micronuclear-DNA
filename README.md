@@ -10,8 +10,8 @@ used TrueSeqv3 adapter trimming for illumina universal adapter <br />
 ./wholecell_data_02/subset_02a.sh creates a subset of reads from nonGE ancestors (Long et al., 2016) (BioProject PRJNA285268) with the same number of reads as the original Mic and Mac flowsorted sequencing samples https://www.ncbi.nlm.nih.gov/bioproject/PRJNA285268/
 
 # Reference Genomes 
-MIC reference genome is available at: https://www.ncbi.nlm.nih.gov/assembly/GCA_000261185.1
-MAC reference genome is available at: https://www.ncbi.nlm.nih.gov/assembly/GCA_000189635.1
+MIC reference genome is available at: https://www.ncbi.nlm.nih.gov/assembly/GCA_000261185.1 <br />
+MAC reference genome is available at: https://www.ncbi.nlm.nih.gov/assembly/GCA_000189635.1 <br />
 rDNA reference genome is available at: https://www.ebi.ac.uk/ena/browser/view/X54512  <br />
 to create the combined referenced concatenated the MIC, MAC, and rDNA references with "cat" 
 
