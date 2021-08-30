@@ -6,6 +6,7 @@ Each folder can be run in order 01-07 with scripts labeled a-h per folder, comma
 * R-3.6.3 https://cran.r-project.org/bin/windows/base/old/3.6.3/ 
 * trimmomatic v0.38 http://www.usadellab.org/cms/?page=trimmomatic
 * * fastqc
+* also bbmap for repair.sh
 * BWA mem v0.7.12 http://bio-bwa.sourceforge.net/
 * SAMtools v1.10 http://www.htslib.org/
 * seqtk https://github.com/lh3/seqtk
