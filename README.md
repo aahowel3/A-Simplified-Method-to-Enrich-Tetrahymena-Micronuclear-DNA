@@ -6,7 +6,7 @@ Each folder can be run in order 01-07 with scripts labeled a-h per folder, comma
 * R-3.6.3 https://cran.r-project.org/bin/windows/base/old/3.6.3/ 
 * trimmomatic v0.38 http://www.usadellab.org/cms/?page=trimmomatic
 * * fastqc
-* also bbmap for repair.sh
+* also bbmap for repair.sh (dont need anymore - uploaded SB210E ancestor directly and they concated the lanes for you) 
 * BWA mem v0.7.12 http://bio-bwa.sourceforge.net/
 * SAMtools v1.10 http://www.htslib.org/
 * seqtk https://github.com/lh3/seqtk
@@ -28,6 +28,9 @@ MIC reference genome is available at: https://www.ncbi.nlm.nih.gov/assembly/GCA_
 MAC reference genome is available at: https://www.ncbi.nlm.nih.gov/assembly/GCA_000189635.1 <br />
 rDNA reference genome is available at: https://www.ebi.ac.uk/ena/browser/view/X54512  <br />
 to create the combined referenced concatenated the MIC, MAC, and rDNA references with "cat" 
+
+** New MAC reference includes rDNA minichromosome as chromosome 181 "In total, we obtained a 103.3 Mb T. thermophila MAC genome assembly consisting of 181 complete chromosomes (Figure 1), named from 1 to 181 by their order along the 5 MIC chromosomes (chr181 for rDNA minichromosome)" 
+** no reference to mitochondrial chromosome - add that in manually 
 
 # Fisher's exact tests 03
 ./fishers_exact_03/fishers_rerun_2_03a.sh runs the MIC and MAC FACS against the combined refernece plus rDNA reference <br />
