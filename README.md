@@ -49,6 +49,10 @@ R script for fishers test is ./fishers_exact/fishers_rerun_ftests_03c.R
 # Simulations 04
 simulations run using MAC reference genome had the mitochondria removed from the reference - to remove mito sequence from mac.genome.fasta use awk '{ if ((NR>1)&&($0~/^>/)) { printf("\n%s", $0); } else if (NR==1) { printf("%s", $0); } else { printf("\t%s", $0); } }' mac.genome.fasta | grep -v -Ff remove.txt - | tr "\t" "\n" > mac.genome_nomito.fasta
 
+^dont need this anymore new MAC ref does not include mito 
+
+#specify note you need to install ART globally 
+
 ./simulations_04/wc_simulations_04a.sh uses bamPEFragmentsize to estimate parameters for ART Illumina and then 2 seperate lines of ART Illumina commands sample reads from the MAC reference (45x) and MIC reference (2x). Mac and Mic R1 and Mac and Mic R2 are then concateneted togehter to create whole cell R1 simulation and whole cell R2 simulation - which is aligned to the MIC+MAC reference using the script ./simulations/flowsortcuration_2_wc_04b.sh <br />
 MIC only and MAC only simulations are run using ./simulations/flowsortcuration_2_mic_mac_04c.sh
 unmapped reads removed with samtools view -b -h -F 4 file.bam > mapped.bam <br />
