@@ -37,6 +37,7 @@ to create the combined referenced concatenated the MIC, MAC, and rDNA references
 ./fishers_exact_03/wholecell_subset/flowsort_curation_wc_2_03b.sh reruns WC against the combined refernece plus rDNA reference <br />
 unmapped reads removed with samtools view -b -h -F 4 file.bam > mapped.bam
 
+The commands below have been incorporated into the script fishers_rerun_count_03c.1.sh: 
 In each alignment (MAC FACS to MICMAC ref and MIC FACS to MICMAC ref) the following commands are run: #count reads exclusively aligned to mac (scf) 
 samtools view FACSsample_toconcatref_mapped.bam | grep -v "XA:" | grep -v "SA:" | awk '$3 ~ /scf/' | wc -l 
 #count reads exclusively aligned to mic (chr) 
