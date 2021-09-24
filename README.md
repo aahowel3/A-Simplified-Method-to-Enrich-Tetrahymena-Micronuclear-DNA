@@ -62,13 +62,15 @@ unmapped reads removed with samtools view -b -h -F 4 file.bam > mapped.bam <br /
 ./simulations_1x/wc_simulations_1x_04d.sh uses bamPEFragmentsize to estimate parameters for ART Illumina and then 2 seperate lines of ART Illumina commands sample reads from the MAC reference (1x) and MIC reference (1x) which is aligned to the MIC+MAC reference using the script ./simulations_1x/flowsortcuration_2_wc_04e.sh
 
 # Coverage MDS and IES 05
+^you need to update this not because it actually uses the new MAC reference but because you need it to generate the MIC only alignments - updating coverage_05b.sh to generate those alignments as well as calculate depth of coverage - but the numbers should stay the same 
+
 ./coverage_05/IES_coordinates.csv - locations of IESs in supercontigs: https://doi.org/10.7554/eLife.19090.001 supplementary file 3A 
 
 ./coverage_05/contig_to_chromosome.csv - locations of supercontigs in chromosomes: https://doi.org/10.7554/eLife.19090.001 supplementary file 1C
 
-The R script ./coverage_05/merge_contigs.R converts IES coordinates in supercontigs to IES coordinates in mic chromosomes. ./coverage_05/merge_contigs.R also splits the IESs_inmic_chromosomes into 5 files: chr#_IESs_inmic.tsv
+The R script ./coverage_05/merge_contigs_05a.R converts IES coordinates in supercontigs to IES coordinates in mic chromosomes. ./coverage_05/merge_contigs.R also splits the IESs_inmic_chromosomes into 5 files: chr#_IESs_inmic.tsv
 
-in ./coverage_05/coverage.sh creates 3 folders - mac_coverage, mic_coverage, wc_coverage - and creates a coverage file of mic samples, mac samples, and wc samples using Samtools depth, pulling from previously generated alignments - each folder has an analyze_coverage_allchromo.sh - which is purely a way to loop each file back through to /coverage_05/analyze_coverage_allchromo.R 
+in ./coverage_05/coverage_05b.sh creates 3 folders - mac_coverage, mic_coverage, wc_coverage - and creates a coverage file of mic samples, mac samples, and wc samples using Samtools depth, pulling from previously generated alignments - each folder has an analyze_coverage_allchromo.sh - which is purely a way to loop each file back through to /coverage_05/analyze_coverage_allchromo.R 
 
 ./coverage_05/analyze_coverage_allchromo.R compares the IES_inMic file and the coverage file to calculate mean coverage for IES regions and mean coverage for Mac-destined regions - but seperated per chromosome - what is an IES in the coordinates for 1 chromosome will not be an IES at the same coordinates in another
 
