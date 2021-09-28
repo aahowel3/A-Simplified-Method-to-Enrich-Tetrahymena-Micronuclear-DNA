@@ -70,7 +70,7 @@ unmapped reads removed with samtools view -b -h -F 4 file.bam > mapped.bam <br /
 
 The R script ./coverage_05/merge_contigs_05a.R converts IES coordinates in supercontigs to IES coordinates in mic chromosomes. ./coverage_05/merge_contigs.R also splits the IESs_inmic_chromosomes into 5 files: chr#_IESs_inmic.tsv
 
-in ./coverage_05/coverage_05b.sh creates 3 folders - mac_coverage, mic_coverage, wc_coverage - and creates a coverage file of mic samples, mac samples, and wc samples using Samtools depth, pulling from previously generated alignments - each folder has an analyze_coverage_allchromo.sh - which is purely a way to loop each file back through to /coverage_05/analyze_coverage_allchromo.R 
+in ./coverage_05/coverage_05b.sh performs alignments to MIC only reference then creates 3 folders - mac_coverage, mic_coverage, wc_coverage - and creates a coverage file of mic samples, mac samples, and wc samples using Samtools depth - each folder has an analyze_coverage_allchromo.sh - which is purely a way to loop each file back through to /coverage_05/analyze_coverage_allchromo.R 
 
 ./coverage_05/analyze_coverage_allchromo.R compares the IES_inMic file and the coverage file to calculate mean coverage for IES regions and mean coverage for Mac-destined regions - but seperated per chromosome - what is an IES in the coordinates for 1 chromosome will not be an IES at the same coordinates in another
 
