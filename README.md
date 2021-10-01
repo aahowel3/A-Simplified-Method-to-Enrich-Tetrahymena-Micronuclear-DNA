@@ -83,6 +83,8 @@ in ./coverage_05/coverage_05b.sh performs alignments to MIC only reference then 
 
 ./retention_scores_06/IRSscore_alignment_2_06c.sh aligns the Mac and Mic flowsorted samples to the mac+IES_reference.fasta reference and creates a bam folder
 
+script create_chain_06c_d.sh (new step in between c and d) creates a mic.mac chain file 
+
 Rscript ./retention_scores_06/IRS/mic.mac.chain_perchromosome_06d.R creates a chain file for each chromosome  
 
 Rscript ./retention_scores_06/IRS/create_mac_excisionsites_06e.sh takes chain files 1-5 and mic_inIES files 1-5 and loops them through create_mac_excisionsites_06f.R to create chrX_mac_excisionsites.tsvs for each chromosome
