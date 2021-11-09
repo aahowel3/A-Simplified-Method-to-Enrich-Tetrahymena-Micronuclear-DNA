@@ -4,7 +4,7 @@
 for arg in "$@"
 do
         file=$(basename "$arg" _chain.tsv)
-        Rscript create_mac_excisionsites.R "${file}_chain.tsv" "${file}_IESs_inmic.tsv" 
+        Rscript ./retention_scores_06/IRS/create_mac_excisionsites_06f.R ./retention_scores_06/IRS/"${file}_chain.tsv" ./coverage_05/"${file}_IESs_inmic.tsv" 
 done
 
 
