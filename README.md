@@ -1,4 +1,4 @@
-# A-Simplified-Method-to-Enrich-Tetrahymena-Micronuclear-DNA
+# An-Alternative-Method-to-Enrich-Tetrahymena-Micronuclear-DNA
 
 # Overview 
 Each folder can be run in order 01-07 with scripts labeled a-h per folder, command line usage for each script is documented in run.sh in ./ <br />
