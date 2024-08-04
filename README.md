@@ -1,5 +1,7 @@
 # An-Alternative-Method-to-Enrich-Tetrahymena-Micronuclear-DNA
 
+Previous estimations of the mutation rate of T. thermophila (Long et al., [2013](https://pubmed.ncbi.nlm.nih.gov/23934880/); Long et al., [2016](https://academic.oup.com/gbe/article/8/12/3629/2669853)) were calculated indirectly, potentially missing mutations that could explain the significant fitness decline of the MA lines. Through flow cytometry, we have demonstrated a method for micronuclei enrichment to directly estimate the mutation rate. Using sequencing reads from flow sorted samples and whole cell controls, we have validated sorting through the following statistical methods: (1) Fisher’s exact tests of uniquely mapped reads to the micro and macronuclear reference genomes (2) mean coverage depth of IES and Macronuclear-destined regions after alignment to the micronuclear reference genome (3) IES retention scores per FACS sample. Using sequencing data from flow-sorted micronuclei, we will be able to more accurately characterize complex mutation events (insertions, deletions, and copy number variants).
+
 # Overview 
 Each folder can be run in order 01-07 with scripts labeled a-h per folder, command line usage for each script is documented in run.sh in ./ <br />
 run.sh downloads raw data as well as whole cell sample controls and creates concatenated reference genomes of the 
